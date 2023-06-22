@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Code Editor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse"style="font-size:20px;">
+        <div class="container-fluid">
+      
+          <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Inline<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html">Basic</a></li>
+                <li><a href="Inline_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Internal<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="Internal_basic.html">Basic</a></li>
+                <li><a href="Internal_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">External<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="External_basic.html">Basic</a></li>
+                <li><a href="External_adv.html">Advance</a></li>
+              </ul>
+            </li>
+       
+          </ul>
+        </div>
+      </nav>
+        
+
+      
+      <h1>EXTERNAL</h1>
+      
+
+<center><div class="container" >
+    <div class="row">
+      <h3>Add External CSS using style attribute.</h3>
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 1 : 
+                <p> <b> H2 Tag</b><br>
+                Color: Blue <br>
+                Size: 30px <br>
+                Decoration: Underline <br></p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("cssCode").
+              innerHTML=` h2 { 
+            font-size:30px;
+            color:blue;
+            text-decoration:underline;
+            } ` '>
+            Add </button></div>
+        </div>
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 2 : 
+                <p> <b> P Tag</b><br>
+                Color: Red <br>
+                Size: 30px <br>
+                Decoration: Underline <br></p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("cssCode").
+              innerHTML=` h2 { 
+            font-size:30px;
+            color:blue;
+            text-decoration:underline;
+            }
+            p {
+            font-size: 18px;
+            font-weight: bolder;
+            text-decoration:underline;
+            color:red;
+            }` '>
+            Add</button></div>
+        </div>
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 3 : 
+                <p> <b>List type</b><br>
+                Unordered list:disc and circle <br>
+                Ordered list: lower-alpha and lower-roman<br> </p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("cssCode").
+              innerHTML=` h2 { 
+            font-size:30px;
+            color: blue;
+            text-decoration: underline;
+            }
+            p {
+            font-size: 18px;
+            font-weight: bolder;
+            text-decoration: underline;
+            color: red;
+            }
+            ul.a {
+            font-family: sans-serif;
+            color: green;
+            list-style: disc;
+            }
+            ul.b {
+            font-size: 22px;
+            list-style: circle;
+            }
+            ol.c {
+            list-style: lower-alpha;
+            }
+            
+            ol.d {
+            list-style: lower-roman;
+            }` '>
+            Add </button></div>
+        </div>
+    </div>
+    </div>
+</center>
+<center><div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="ext_code">
+                <textarea id="htmlCode" style="height: 96%">
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                    </head>
+                    <body>
+                    <h2>List using external CSS</h2>
+                    <p>Some examples of unordered lists:</p>
+                    <ul class="a">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ul>
+                    <ul class="b">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ul>
+                    
+                    <p>Example of ordered lists:</p>
+                    <ol class="c">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ol>
+                    
+                    <ol class="d">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ol>    
+                    </body>
+                    </html>    
+                </textarea>    
+                
+                <textarea id="cssCode">
+                
+                 </textarea>                   
+                <button style="background: green; " class="btn btn-success" onclick="showPreview()">Try this out</button>
+                </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="ext_preview">
+                <iframe id="preview-window"></iframe>
+              </div>
+        </div>
+    </div>
+</div>
+</center>
+<center><div class="container">
+    <div class="row">
+        <h3> Try using external CSS yourself below. Add more properties and make it look more creative.</h3>
+
+        <div class="col-sm-6">
+            <div class="ext_code">
+                <textarea id="htmlCode2" style="height: 96%">
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                    </head>
+                    <body>
+                    <h2>List using external CSS</h2>
+                    <p>Some examples of unordered lists:</p>
+                    <ul class="a">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ul>
+                    <ul class="b">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ul>
+                    
+                    <p>Example of ordered lists:</p>
+                    <ol class="c">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ol>
+                    
+                    <ol class="d">
+                      <li>Car</li>
+                      <li>Bus</li>
+                      <li>Truck</li>
+                    </ol>    
+                    </body>
+                    </html>
+                </textarea>    
+                
+                <textarea id="cssCode2" placeholder="Write Code here!!">
+                
+                 </textarea>                   
+                <button style="background: green; " class="btn btn-success" onclick="showPreview2()">Run</button>
+                </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="ext_preview">
+                <iframe id="preview-window2"></iframe>
+              </div>
+        </div>
+    </div>
+</div>
+</center>
+<br>
+<br>
+<script>
+    function showPreview(){
+  var htmlCode = document.getElementById("htmlCode").value;
+  var cssCode = "<style>"+document.getElementById("cssCode").value+"</style>"; 
+  var frame = document.getElementById("preview-window").contentWindow.document;
+  frame.open();
+  frame.write(htmlCode+cssCode);
+  frame.close();
+}
+
+function showPreview2(){
+  var htmlCode = document.getElementById("htmlCode2").value;
+  var cssCode = "<style>"+document.getElementById("cssCode2").value+"</style>"; 
+  var frame = document.getElementById("preview-window2").contentWindow.document;
+  frame.open();
+  frame.write(htmlCode+cssCode);
+  frame.close();
+}
+
+</script>
+</body>
+</html> 

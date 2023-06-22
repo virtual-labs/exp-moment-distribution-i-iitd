@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Code Editor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse"style="font-size:20px;">
+        <div class="container-fluid">
+      
+          <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Inline<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html">Basic</a></li>
+                <li><a href="Inline_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Internal<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="Internal_basic.html">Basic</a></li>
+                <li><a href="Internal_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">External<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="External_basic.html">Basic</a></li>
+                <li><a href="External_adv.html">Advance</a></li>
+              </ul>
+            </li>
+       
+          </ul>
+        </div>
+      </nav>
+        
+
+      
+      <h1>EXTERNAL</h1>
+      
+
+<center><div class="container" >
+    <div class="row">
+      <h3>Add External CSS using style attribute.</h3>
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 1 : 
+                <p> <b> H1 Tag</b><br>
+                Color: Red <br>
+                Size: 3em <br>
+                Decoration: Underline <br></p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("cssCode").
+              innerHTML=` h1 {
+              color:red;
+              font-size:3em;
+              text-decoration:underline;
+            }` '>
+            Add </button></div>
+        
+        </div>
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 2 : 
+                <p> <b> P Tag</b><br>
+                Color: Green <br>
+                Size: 1.5em <br>
+                Decoration: None <br></p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("cssCode").
+              innerHTML=`
+              h1 {
+              color:red;
+              font-size:3em;
+              text-decoration:underline;
+            }
+              p{
+                  color:green;
+                  font-size: 1.5em;
+                  text-decoration:none;
+              }` '>
+            Add</button></div>
+        
+        </div>
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 3 : 
+                <p> <b>Img Tag</b><br>
+                Add border and bg color<br>
+                Width : 30%<br>
+                Height : 30%<br></p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("cssCode").
+              innerHTML=` 
+                h1 {
+              color:red;
+              font-size:3em;
+              text-decoration:underline;
+            }
+              p{
+                  color:green;
+                  font-size: 1.5em;
+                  text-decoration:none;
+              }
+                img{
+                  border: 4px solid red;
+                  width: 400px;
+                  height: 400px;
+                  background-color : black;
+              }`'>
+            Add</button></div>
+        
+        </div>
+    </div>
+    </div>
+    </center>
+<center><div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="ext_code">
+                    <textarea id="htmlCode" style="height: 96%">
+                    <!DOCTYPE html>
+                    <head>
+                    </head>
+                    <body>
+                    <h1>Asteroids</h1>
+                    <p>This is image of an asteroid.</p>
+                    <img src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/asteroid_blend.png">
+                    </body>
+                    </html>
+                    </textarea>    
+                    
+                    <textarea id="cssCode">
+                    
+                     </textarea>                   
+                    <button style="background: green; " class="btn btn-success" onclick="showPreview()">Try this out</button>
+                    </div>
+                    
+            </div>
+            <div class="col-sm-6">
+                <div class="ext_preview">
+                    <iframe id="preview-window"></iframe>
+                  </div>
+            </div>
+        </div>
+    </div>
+</center>
+<center><div class="container">
+    <div class="row">
+        <h3> Try using external CSS yourself below. Add more properties and make it look more creative.</h3>
+
+        <div class="col-sm-6">
+            <div class="ext_code">
+                <textarea id="htmlCode2" style="height: 96%">
+                <!DOCTYPE html>
+                <head>
+                </head>
+                <body>
+                <h1>Asteroids</h1>
+                <p>This is image of an asteroid.</p>
+                <img src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/asteroid_blend.png">
+                </body>
+                </html>
+                </textarea>    
+                
+                <textarea id="cssCode2" placeholder="Write Code here!!">
+                
+                 </textarea>                   
+                <button style="background: green; " class="btn btn-success" onclick="showPreview2()">Run</button>
+                </div>
+                
+        </div>
+        <div class="col-sm-6">
+            <div class="ext_preview">
+                <iframe id="preview-window2"></iframe>
+              </div>
+        </div>
+    </div>
+</div>
+</center>
+<br>
+<br>
+<script>
+    function showPreview(){
+  var htmlCode = document.getElementById("htmlCode").value;
+  var cssCode = "<style>"+document.getElementById("cssCode").value+"</style>"; 
+  var frame = document.getElementById("preview-window").contentWindow.document;
+  frame.open();
+  frame.write(htmlCode+cssCode);
+  frame.close();
+}
+
+function showPreview2(){
+  var htmlCode = document.getElementById("htmlCode2").value;
+  var cssCode = "<style>"+document.getElementById("cssCode2").value+"</style>"; 
+  var frame = document.getElementById("preview-window2").contentWindow.document;
+  frame.open();
+  frame.write(htmlCode+cssCode);
+  frame.close();
+}
+
+</script>
+</body>
+</html> 
