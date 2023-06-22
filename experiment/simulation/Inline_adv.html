@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Code Editor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse"style="font-size:20px;">
+        <div class="container-fluid">
+      
+          <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Inline<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html">Basic</a></li>
+                <li><a href="Inline_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Internal<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="Internal_basic.html">Basic</a></li>
+                <li><a href="Internal_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">External<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="External_basic.html">Basic</a></li>
+                <li><a href="External_adv.html">Advance</a></li>
+              </ul>
+            </li>
+       
+          </ul>
+        </div>
+      </nav>
+        
+
+      
+      <h1>INLINE</h1>
+
+      <center><div class="container" >
+        <div class="row">
+          <h3>Add inline CSS using style attribute.</h3>
+            <div class="col-sm-4">
+                <div class="tbox">
+                    Step 1 : 
+                    <p> <b> Add Text Color</b><br>
+                    h2: Red <br>
+                    th: Green <br>
+                    td: Blue<br>
+                    th: Blue   </p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("htmlCode").
+              innerHTML=` <!DOCTYPE html>
+            <head>
+            </head>
+            <body>
+            <h2 style="color:red"><u>Inline Styling</u></h2>
+                <table>
+                    <tr>
+                        <th style="color:green;">Firstname</th>
+                        <th style="color:green;">Lastname</th> 
+                        <th style="color:green;">Age</th>
+                    </tr>
+                    <tr>
+                        <td style="color:blue;">Nandini </td>
+                        <td style="color:blue;">Jairath</td>
+                        <td style="color:blue;">20</td>
+                    </tr>
+                    <tr style="color:blue;">
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                        <td >50</td>
+                    </tr>
+                    <tr style="color:blue;">
+                        <td >Shreya</td>
+                        <td>Asthana</td>
+                        <td >20</td>
+                    </tr>
+                </table>
+                <br>
+                
+                <table id="t01">
+                  <tr>
+                    <th style="color:green;">Firstname</th>
+                    <th style="color:green;">Lastname</th> 
+                    <th style="color:green;">Age</th>
+                  </tr>
+                  <tr>
+                    <td style="color:blue;">John</td>
+                    <td style="color:blue;">Doe</td>
+                    <td style="color:blue;">40</td>
+                  </tr>
+                  <tr style="color:blue;">
+                    <td>Shuvam</td>
+                    <td>Gupta</td>
+                    <td>20</td>
+                  </tr>
+                  <tr style="color:blue;">
+                    <td>Parth</td>
+                    <td>Dogra</td>
+                    <td>20</td>
+                  </tr>
+                </table>
+            </body>
+            </html>`'>
+            Add text color </button></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="tbox">
+                    Step 2 :
+                        <p> <b>Add Background color</b><br>
+                        table,t01: Yellow <br>
+                    background: Pink</p>
+                  <button type="button" class="btn btn-success" onclick='document.getElementById("htmlCode").
+                  innerHTML=` <!DOCTYPE html>
+                <head>
+                </head>
+                <body style="background-color:pink">
+                <h2 style="color:red"><u>Inline Styling</u></h2>
+                    <table style="background-color:yellow">
+                        <tr>
+                            <th style="color:green;">Firstname</th>
+                            <th style="color:green;">Lastname</th> 
+                            <th style="color:green;">Age</th>
+                        </tr>
+                        <tr>
+                            <td style="color:blue;">Nandini </td>
+                            <td style="color:blue;">Jairath</td>
+                            <td style="color:blue;">20</td>
+                        </tr>
+                        <tr style="color:blue;">
+                            <td>Eve</td>
+                            <td>Jackson</td>
+                            <td >50</td>
+                        </tr>
+                        <tr style="color:blue;">
+                            <td >Shreya</td>
+                            <td>Asthana</td>
+                            <td >20</td>
+                        </tr>
+                    </table>
+                    <br>
+                    
+                    <table id="t01" style="background-color:yellow">
+                      <tr>
+                        <th style="color:green;">Firstname</th>
+                        <th style="color:green;">Lastname</th> 
+                        <th style="color:green;">Age</th>
+                      </tr>
+                      <tr>
+                        <td style="color:blue;">John</td>
+                        <td style="color:blue;">Doe</td>
+                        <td style="color:blue;">40</td>
+                      </tr>
+                      <tr style="color:blue;">
+                        <td>Shuvam</td>
+                        <td>Gupta</td>
+                        <td>20</td>
+                      </tr>
+                      <tr style="color:blue;">
+                        <td>Parth</td>
+                        <td>Dogra</td>
+                        <td>20</td>
+                      </tr>
+                    </table>
+                </body>
+                </html>`'>
+                Add Background color </button></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="tbox">
+                    Step 3 : 
+                        <p> <b>Change font size and styles</b><br>
+                        h2,table content: Cursive font style<br>
+                        th,table content: Padding:15px<br>
+                        table: width:100% </p>
+                  <button type="button" class="btn btn-success" onclick='document.getElementById("htmlCode").
+                  innerHTML=`  <!DOCTYPE html>
+                <head>
+                </head>
+                <body style="background-color:pink;">
+                
+                <h2 style="color:red;font-family:cursive;">
+                <u>Inline Styling</u></h2>
+                    
+                <table style="background-color:yellow;width:100%">
+                <tr>
+                <th style="color:green;font-family:cursive;padding:15px;"> Firstname </th>
+                <th style="color:green;font-family:cursive;padding:15px;">Lastname</th> 
+                <th style="color:green;font-family:cursive;">Age</th>
+                </tr>
+                <tr>
+                <td style="color:blue;font-family:cursive;padding:15px;">Nandini </td>
+                <td style="color:blue;font-family:cursive;padding:15px;">Jairath</td>
+                <td style="color:blue;font-family:cursive;padding:15px;">20</td>
+                </tr>
+                <tr style="color:blue;font-family:cursive;">
+                <td style="padding:15px";>Eve</td>
+                <td style="padding:15px">Jackson</td>
+                <td style="padding:15px">50</td>
+                </tr>
+                <tr style="color:blue;font-family:cursive;">
+                <td style="padding:15px">Shreya</td>
+                <td style="padding:15px">Asthana</td>
+                <td style="padding:15px">20</td>
+                </tr>
+                </table>
+                <br> 
+                <table id="t01" style="background-color:yellow;width:100%">
+                <tr style="font-family:cursive;">
+                <th style="color:green;padding:15px">Firstname</th>
+                <th style="color:green;padding:15px">Lastname</th> 
+                <th style="color:green;padding:15px">Age</th>
+                </tr>
+                <tr style="font-family:cursive;">
+                <td style="color:blue;padding:15px">John</td>
+                <td style="color:blue;padding:15px">Doe</td>
+                <td style="color:blue;padding:15px">40</td>
+                </tr>
+                <tr style="color:blue;font-family:cursive">
+                <td style="padding:15px">Shuvam</td>
+                <td style="padding:15px">Gupta</td>
+                <td style="padding:15px">20</td>
+                </tr>
+                <tr style="color:blue;font-family:cursive;">
+                <td style="padding:15px">Parth</td>
+                <td style="padding:15px">Dogra</td>
+                <td style="padding:15px">20</td>
+                </tr>
+                </table>
+                </body>
+                </html>`'>
+                Change text size </button>
+                </div>
+
+            </div>
+            </div>
+            </div>
+        </center>
+        <center><div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="code">
+                        <textarea id="htmlCode" style="height: 96%">
+                      <!DOCTYPE html>
+                      <head>
+                      </head>
+                      <body>
+                      <h2><u>Inline Styling</u></h2>
+                          <table>
+                              <tr>
+                                  <th>Firstname</th>
+                                  <th>Lastname</th> 
+                                  <th>Age</th>
+                              </tr>
+                              <tr>
+                                  <td>Nandini </td>
+                                  <td>Jairath</td>
+                                  <td>20</td>
+                              </tr>
+                              <tr>
+                                  <td>Eve</td>
+                                  <td>Jackson</td>
+                                  <td >50</td>
+                              </tr>
+                              <tr>
+                                  <td >Shreya</td>
+                                  <td>Asthana</td>
+                                  <td >20</td>
+                              </tr>
+                          </table>
+                          <br>
+                          
+                          <table id='t01'>
+                            <tr>
+                              <th>Firstname</th>
+                              <th>Lastname</th> 
+                              <th>Age</th>
+                            </tr>
+                            <tr>
+                              <td>John</td>
+                              <td>Doe</td>
+                              <td>40</td>
+                            </tr>
+                            <tr>
+                              <td>Shuvam</td>
+                              <td>Gupta</td>
+                              <td>20</td>
+                            </tr>
+                            <tr>
+                              <td>Parth</td>
+                              <td>Dogra</td>
+                              <td>20</td>
+                            </tr>
+                          </table>
+                          
+                      </body>
+                      </html>
+                          
+                          
+                      </textarea>  
+                      <button type="button" style="background: green; " class="btn btn-success" onclick="showPreview()">
+                      Try this out
+                      </button>    
+                      
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="preview">
+                            <iframe id="preview-window"></iframe>
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </center>
+        
+        <center> <div class="container">
+            <div class="row">
+              <h3> Try using inline CSS yourself below. Add style attribute to different tags for designing a basic web page.</h3>
+                <div class="col-sm-6">
+                    <div class="code">
+	
+                        <textarea onkeyup="showPreview2()" id="htmlCode2" placeholder="Write Code here!!" style="height: 96%">
+                      </textarea>  
+                          
+                      
+                      </div>
+                      </div>
+                    <div class="col-sm-6">
+                        <div class="preview">
+                            <iframe id="preview-window2"></iframe>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </center>
+            <br>
+            <br>
+            <script>
+                function showPreview(){
+                var htmlCode = document.getElementById("htmlCode").value;
+                var frame = document.getElementById("preview-window").contentWindow.document;
+                frame.open();
+                frame.write(htmlCode);
+                frame.close();
+              }
+              
+                function showPreview2(){
+                var htmlCode = document.getElementById("htmlCode2").value;
+                document.getElementById('preview-window2').srcdoc=htmlCode;
+              }
+              </script>
+              </body>
+              </html>
+                  
