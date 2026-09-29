@@ -9,12 +9,7 @@
         "c": "2",
         "d": "-2"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
@@ -26,17 +21,11 @@
         "c": "PL2 / 12",
         "d": "0"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "d",
       "difficulty": "beginner"
-    }
-
-     {
+    },
+    {
       "question": "Which of the following is NOT involved in the Moment Distribution Method?",
       "answers": {
         "a": "Fixed-end moments",
@@ -44,16 +33,10 @@
         "c": "Flexibility matrix",
         "d": "Carry-over factors"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "c",
       "difficulty": "beginner"
-    }
-
+    },
     {
       "question": "If a moment is applied at one end of a fixed-fixed beam, the moment carried over to the other end is",
       "answers": {
@@ -62,16 +45,10 @@
         "c": "25%",
         "d": "0%"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "b",
       "difficulty": "beginner"
-    }
-
+    },
     {
       "question": "Which of the following is necessary for calculating distribution factors in the Moment Distribution Method?",
       "answers": {
@@ -80,17 +57,11 @@
         "c": "Axial force",
         "d": "Shear force"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "b",
       "difficulty": "beginner"
-    }
-
-     {
+    },
+    {
       "question": "In a Moment Distribution analysis, after distributing the moments at a joint, what is done next?",
       "answers": {
         "a": "Apply loads",
@@ -98,12 +69,7 @@
         "c": "Carry-over moments to the far ends",
         "d": "Increase the loads"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "c",
       "difficulty": "beginner"
     }
