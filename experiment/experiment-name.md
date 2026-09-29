@@ -1,1 +1,1 @@
-## Experiment name
+## Moment Distribution Method (Beam)
