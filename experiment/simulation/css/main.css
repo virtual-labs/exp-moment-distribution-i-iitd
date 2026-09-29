@@ -1,1 +1,151 @@
-/* You CSS goes in here */
+* { box-sizing: border-box; }
+
+body {
+  margin: 24px;
+  background: #eef1f4;
+  color: #1c252d;
+  font: 14px/1.45 Verdana, Arial, sans-serif;
+}
+
+#simwrap { width: 800px; height: 600px; margin: 0 auto; }
+
+#simscreen {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  margin: 0;
+  transform: scale(var(--simulation-scale, 1));
+  transform-origin: top left;
+  overflow: hidden;
+  border: 1px solid #4a535a;
+  background: #f8fafb;
+  box-shadow: 0 10px 30px rgba(24, 37, 48, .14);
+}
+
+#title {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #273944;
+  color: #fff;
+}
+
+#title h1 { margin: 0; font-size: 18px; font-weight: 600; }
+
+.simsubscreen {
+  position: absolute;
+  inset: 44px 0 0;
+  width: 800px;
+  height: 556px;
+  padding: 20px 24px;
+  background: #f8fafb;
+}
+
+.hidden { visibility: hidden; }
+
+.intro, .completion {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.intro { padding-top: 12px; }
+.eyebrow { margin: 0 0 5px; color: #a54a2b; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+.intro h2, .completion h2 { margin: 0 0 6px; font-size: 24px; }
+.intro > p:not(.eyebrow), .completion > p:not(.eyebrow) { max-width: 620px; margin: 0 0 12px; color: #4b5a64; }
+.intro img { width: 590px; height: 230px; margin: 8px 0 12px; }
+
+button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.primary, .action {
+  border-radius: 4px;
+  background: #176b70;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 3px 0 #0d4c51;
+}
+
+.primary { min-height: 42px; padding: 0 18px; }
+.primary span { margin-left: 10px; font-size: 18px; }
+.action { min-height: 36px; padding: 0 16px; }
+.primary:hover, .action:hover { background: #0f5d62; }
+
+.step-heading { padding: 0 4px 12px; border-bottom: 1px solid #d5dde1; }
+.step-heading span { color: #a54a2b; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.step-heading h2 { display: inline; margin: 0 0 0 9px; font-size: 19px; }
+.step-heading p { margin: 6px 0 0; color: #52616a; }
+
+.bring { position: absolute; top: 105px; left: 320px; animation: pulse 1.4s ease-in-out infinite; }
+.beam-figure { position: absolute; top: 160px; left: 90px; width: 590px; height: auto; }
+.figure-caption { position: absolute; top: 465px; left: 76px; width: 600px; margin: 0; padding: 10px 14px; border-left: 4px solid #176b70; background: #e8f0f1; }
+
+.work-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 18px; }
+.equation-panel, .work-panel, .work-figure { min-height: 350px; padding: 16px; background: #edf2f4; border-top: 3px solid #176b70; }
+.work-panel { background: #fff; border-top-color: #a54a2b; }
+.work-figure img { display: block; width: 100%; height: auto; margin: 42px auto 24px; }
+.work-figure p { color: #52616a; }
+.equation { margin: 12px 0 16px; line-height: 1.6; }
+.equation sub, .equation sup { line-height: 0; }
+.note { margin: 18px 0 0; color: #52616a; font-size: 12px; }
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; margin-bottom: 12px; }
+.field-grid.two-col { grid-template-columns: 1fr 1fr; }
+label { min-width: 0; font-weight: 600; font-size: 12px; }
+input { display: block; width: 100%; height: 34px; margin-top: 4px; padding: 4px 8px; border: 1px solid #aebbc2; border-radius: 3px; background: #fff; color: #1c252d; font: inherit; }
+input:focus { outline: 2px solid #176b70; outline-offset: 1px; }
+.output { display: block; max-height: 126px; overflow-y: auto; margin-top: 12px; padding: 9px 10px; border-left: 3px solid #176b70; background: #e8f0f1; line-height: 1.4; }
+.output:empty { display: none; }
+.output.warning { border-left-color: #a53b32; background: #faecea; color: #63231e; }
+.small-figure { display: block; width: 100%; height: auto; margin: 18px auto 0; }
+
+.ledger-wrap { padding-top: 14px; }
+.ledger-guide { margin: 0 0 8px; padding: 7px 10px; border-left: 3px solid #a54a2b; background: #fff4ef; color: #35434b; font-size: 11px; line-height: 1.4; }
+.moment-ledger { width: 100%; border-collapse: collapse; table-layout: fixed; background: #fff; font-size: 12px; }
+.moment-ledger th, .moment-ledger td { padding: 7px 6px; border: 2px solid #718087; text-align: center; vertical-align: middle; }
+.moment-ledger { border: 2px solid #43535b; }
+.moment-ledger thead th { background: #273944; color: #fff; }
+.moment-ledger thead th small { color: #d5e1e4; font-size: 10px; font-weight: 400; }
+.moment-ledger thead th:first-child { width: 205px; text-align: left; }
+.moment-ledger tbody th { background: #edf2f4; text-align: left; font-weight: 600; }
+.moment-ledger td input { height: 31px; margin: 0; padding: 3px 4px; text-align: center; }
+.moment-ledger .final-row td, .moment-ledger .final-row th { background: #e6f0ef; font-weight: 700; }
+.ledger-working { display: grid; grid-template-columns: 145px 1fr; column-gap: 12px; row-gap: 3px; margin-top: 12px; padding: 9px 12px; background: #edf2f4; border-left: 3px solid #176b70; }
+.ledger-working h3 { grid-row: 1 / span 3; margin: 0; align-self: center; font-size: 14px; }
+.ledger-working .equation { margin: 2px 0; font-size: 12px; }
+.ledger-actions { display: flex; align-items: center; gap: 12px; min-height: 42px; margin-top: 9px; }
+.ledger-actions .output { flex: 1; max-height: 66px; margin: 0; }
+.next-step { min-height: 40px; flex: 0 0 auto; white-space: nowrap; }
+.next-step span { margin-left: 8px; font-size: 17px; }
+.next-step.hidden { display: none; }
+#canvas5 { padding: 12px 20px 10px; }
+#canvas5 .step-heading { padding-bottom: 8px; }
+#canvas5 .ledger-wrap { padding-top: 8px; }
+#canvas5 .ledger-guide { margin-bottom: 5px; padding: 5px 8px; font-size: 10px; line-height: 1.3; }
+#canvas5 .moment-ledger { font-size: 11px; }
+#canvas5 .moment-ledger th, #canvas5 .moment-ledger td { padding: 4px 5px; }
+#canvas5 .moment-ledger td input { height: 28px; }
+#canvas5 .ledger-working { grid-template-columns: 1fr; row-gap: 1px; margin-top: 7px; padding: 5px 9px; }
+#canvas5 .ledger-working h3 { grid-row: auto; margin: 0 0 2px; font-size: 12px; }
+#canvas5 .ledger-working .equation { margin: 1px 0; font-size: 10px; line-height: 1.35; }
+#canvas5 .ledger-actions { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 4px 9px; margin-top: 6px; }
+#canvas5 .ledger-actions .output { grid-column: 2; grid-row: 1 / span 2; max-height: 58px; padding: 5px 7px; font-size: 10px; }
+#canvas5 .ledger-actions .next-step { grid-column: 1; grid-row: 2; min-height: 32px; padding: 0 11px; }
+.moment-review { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: center; margin-top: 26px; padding: 20px; background: #edf2f4; border-top: 3px solid #176b70; }
+.worked-sums .equation { margin: 13px 0; }
+.moment-review .small-figure { margin: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.next-hand { position: absolute; right: 20px; bottom: 14px; width: 56px; height: 52px; border-radius: 50%; background: #176b70; color: #fff; font-size: 34px; line-height: 1; box-shadow: 0 3px 0 #0d4c51, 0 5px 12px rgba(23,107,112,.25); animation: pulse 1.2s ease-in-out infinite; }
+.next-hand:hover { background: #0f5d62; }
+.completion { padding-top: 12px; }
+.completion img { width: 700px; max-height: 210px; object-fit: contain; margin: 8px 0; background: #fff; }
+.result-strip { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px 22px; width: 100%; margin: 10px 0 14px; padding: 12px; background: #edf2f4; font-weight: 600; }
+
+@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .7; transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
