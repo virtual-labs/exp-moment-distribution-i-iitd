@@ -23,7 +23,7 @@ When a beam or frame member is subjected to external loads and the ends of the m
 
 Where (FEM<sub>AB</sub>) is the moment at end A of member AB, and FEMBA is the moment at end B.
 
-#### 4.Distribution Factor (DF)
+#### 4. Distribution Factor (DF)
 At each joint, the total moment to be distributed is shared among the connected members based on their relative stiffnesses. This ratio is known as the distribution factor. It ensures that stiffer members take a larger share of the moment. The distribution factor for a member connected at a joint is calculated as
 
 DF = K <sub>member</sub> / K <sub>all members at the joint</sub>
