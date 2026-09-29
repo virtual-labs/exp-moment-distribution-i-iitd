@@ -1,0 +1,64 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "The Moment Distribution Method is most suitable for which type of structures?",
+      "answers": {
+        "a": "Determinate structures",
+        "b": "Indeterminate structures",
+        "c": "Trusses",
+        "d": "Simple beams"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does the 'stiffness' of a beam refer to in the Moment Distribution Method?",
+      "answers": {
+        "a": "Flexibility to bending",
+        "b": "Resistance to rotation",
+        "c": "Moment of inertia",
+        "d": "Support reactions"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "For a beam with both ends fixed, what is the stiffness K?",
+      "answers": {
+        "a": "3EI / L",
+        "b": "2EI / L",
+        "c": "4EI / L",
+        "d": "EI / L"
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The Carry-Over Factor (COF) for a member with a fixed end is typically.",
+      "answers": {
+        "a": "1",
+        "b": "0.5",
+        "c": "0",
+        "d": "2"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In the Moment Distribution Method, which factor determines the proportion of moment distributed to each member at a joint?",
+      "answers": {
+        "a": "Carry-Over Factor",
+        "b": "Distribution Factor",
+        "c": "Flexibility",
+        "d": "Axial Force"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}

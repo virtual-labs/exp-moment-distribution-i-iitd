@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moment Distribution Method Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="simwrap">
+  <main id="simscreen">
+    <header id="title"><h1>Moment Distribution Method</h1></header>
+
+    <section class="simsubscreen" id="canvas0">
+      <div class="intro">
+        
+        <h2>Two span continuous beam</h2>
+        <p>Balance the internal moments at joint B, carry moments to the far ends, then find the support reactions.</p>
+        <img src="images/two-span-beam.png" alt="Two-span beam with a point load on AB and a distributed load on BC">
+        <button id="startBtn" class="primary" type="button">Start experiment <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas1">
+      <div class="step-heading"><span>Step 1</span><h2>Inspect the beam</h2><p>Bring the beam diagram into the workspace to identify spans, loads, and moment directions.</p></div>
+      <button id="bringBtn" class="primary bring" type="button">Bring beam</button>
+      <img src="images/two-span-beam.png" id="beamFigure" class="beam-figure hidden" alt="Two-span beam, spans AB and BC, with point load and uniformly distributed load">
+      <div id="beamCaption" class="figure-caption hidden">AB: 50 kN point load, 2 m from A and 3 m from B. BC: 24 kN/m UDL over 5 m. A and C are fixed; B is the balancing joint.</div>
+      <button id="next1" class="next-hand hidden" type="button" aria-label="Continue to data entry">☞</button>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas2">
+      <div class="step-heading"><span>Step 2</span><h2>Enter beam data</h2><p>Use the values shown in the beam diagram. Lengths are in metres; loads are in kN and kN/m.</p></div>
+      <div class="work-layout">
+        <div class="work-figure"><img src="images/two-span-beam.png" alt="Beam input reference diagram"><p>Check the point-load offsets and the length of span BC before submitting.</p></div>
+        <div class="work-panel">
+          <div class="field-grid">
+            <label>Point load P <input id="P" type="number" step="0.01" value="50"></label>
+            <label>UDL w <input id="w" type="number" step="0.01" value="24"></label>
+            <label>Offset a from A <input id="a" type="number" step="0.01" value="2"></label>
+            <label>Offset b to B <input id="b" type="number" step="0.01" value="3"></label>
+            <label>Span BC Lc <input id="Lc" type="number" step="0.01" value="5"></label>
+          </div>
+          <button id="submitData" class="action calc-btn" type="button">Submit values</button>
+          <output id="out-data" class="output" aria-live="polite"></output>
+        </div>
+      </div>
+      <button id="next2" class="next-hand hidden" type="button" aria-label="Continue to fixed-end moments">☞</button>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas3">
+      <div class="step-heading"><span>Step 3</span><h2>Fixed-end moments</h2><p>Calculate the four end moments caused by the applied loads while both member ends are fixed.</p></div>
+      <div class="work-layout">
+        <div class="equation-panel">
+          <p class="equation">L<sub>AB</sub> = a + b = <span data-result="Lab"></span> m</p>
+          <p class="equation">M<sup>F</sup><sub>AB</sub> = Pab² / L<sub>AB</sub>²</p>
+          <p class="equation">M<sup>F</sup><sub>BA</sub> = -Pa²b / L<sub>AB</sub>²</p>
+          <p class="equation">M<sup>F</sup><sub>BC</sub> = wL<sub>c</sub>² / 12; &nbsp; M<sup>F</sup><sub>CB</sub> = -wL<sub>c</sub>² / 12</p>
+          <p class="note">Anticlockwise end moment is positive.</p>
+        </div>
+        <div class="work-panel">
+          <div class="field-grid two-col">
+            <label>M<sup>F</sup><sub>AB</sub> <input id="femAB" type="number" step="0.01"></label>
+            <label>M<sup>F</sup><sub>BA</sub> <input id="femBA" type="number" step="0.01"></label>
+            <label>M<sup>F</sup><sub>BC</sub> <input id="femBC" type="number" step="0.01"></label>
+            <label>M<sup>F</sup><sub>CB</sub> <input id="femCB" type="number" step="0.01"></label>
+          </div>
+          <button class="action calc-btn" data-check="fem" type="button">Calculate</button>
+          <output id="out-fem" class="output" aria-live="polite"></output>
+        </div>
+      </div>
+      <button id="next3" class="next-hand hidden" type="button" aria-label="Continue to stiffness and distribution factors">☞</button>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas4">
+      <div class="step-heading"><span>Step 4</span><h2>Stiffness and distribution factors</h2><p>A and C are fixed. At joint B, compare the stiffness of BA and BC.</p></div>
+      <div class="work-layout">
+        <div class="equation-panel">
+          <p class="equation">K<sub>BA</sub> = 4EI / L<sub>AB</sub></p>
+          <p class="equation">K<sub>BC</sub> = 4EI / L<sub>c</sub></p>
+          <p class="equation">D<sup>F</sup><sub>BA</sub> = K<sub>BA</sub> / (K<sub>BA</sub> + K<sub>BC</sub>)</p>
+          <p class="equation">D<sup>F</sup><sub>BC</sub> = K<sub>BC</sub> / (K<sub>BA</sub> + K<sub>BC</sub>)</p>
+          <p class="note">The common factor 4EI cancels. DF values at the fixed supports A and C are zero.</p>
+        </div>
+        <div class="work-panel">
+          <div class="field-grid two-col">
+            <label>D<sup>F</sup><sub>BA</sub> <input id="dfBA" type="number" step="0.01"></label>
+            <label>D<sup>F</sup><sub>BC</sub> <input id="dfBC" type="number" step="0.01"></label>
+          </div>
+          <p class="note">Check: D<sup>F</sup><sub>BA</sub> + D<sup>F</sup><sub>BC</sub> = 1.</p>
+          <button class="action calc-btn" data-check="df" type="button">Calculate</button>
+          <output id="out-df" class="output" aria-live="polite"></output>
+        </div>
+      </div>
+      <button id="next4" class="next-hand hidden" type="button" aria-label="Continue to distribution and carry-over">☞</button>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas5">
+      <div class="step-heading"><span>Step 5</span><h2>Distribute and carry over</h2><p>Balance joint B, then carry half of each balancing moment to the far end.</p></div>
+      <div class="ledger-wrap">
+        <p class="ledger-guide"><strong>Read the columns:</strong> AB and BA are the two ends of span AB; BC and CB are the two ends of span BC. BA and BC meet at joint B. <strong>Read the rows:</strong> enter the balancing distribution at BA/BC, then carry half of each value to the far ends AB/CB. A dash means that operation does not apply at that end.</p>
+        <table class="moment-ledger">
+          <thead><tr><th scope="col">Moment row</th><th scope="col">AB<br><small>far end A</small></th><th scope="col">BA<br><small>joint B</small></th><th scope="col">BC<br><small>joint B</small></th><th scope="col">CB<br><small>far end C</small></th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Distribution factor</th><td>0</td><td id="dfCellBA">-</td><td id="dfCellBC">-</td><td>0</td></tr>
+            <tr><th scope="row">Fixed-end moment (kN·m)</th><td id="femCellAB">-</td><td id="femCellBA">-</td><td id="femCellBC">-</td><td id="femCellCB">-</td></tr>
+            <tr><th scope="row">Distribution (kN·m)</th><td>—</td><td><label class="sr-only" for="distBA">Distributed moment at BA</label><input id="distBA" type="number" step="0.01" inputmode="decimal"></td><td><label class="sr-only" for="distBC">Distributed moment at BC</label><input id="distBC" type="number" step="0.01" inputmode="decimal"></td><td>—</td></tr>
+            <tr><th scope="row">Carry-over (kN·m)</th><td><label class="sr-only" for="carryAB">Carry-over moment to AB</label><input id="carryAB" type="number" step="0.01" inputmode="decimal"></td><td>—</td><td>—</td><td><label class="sr-only" for="carryCB">Carry-over moment to CB</label><input id="carryCB" type="number" step="0.01" inputmode="decimal"></td></tr>
+            <tr class="final-row"><th scope="row">Final end moment (kN·m)</th><td id="finalCellAB">—</td><td id="finalCellBA">—</td><td id="finalCellBC">—</td><td id="finalCellCB">—</td></tr>
+          </tbody>
+        </table>
+        <div class="ledger-working">
+          <h3>Working at joint B</h3>
+          <p id="balanceEquation" class="equation"></p>
+          <p id="distributionEquation" class="equation"></p>
+          <p id="carryEquation" class="equation"></p>
+        </div>
+        <div class="ledger-actions">
+          <button class="action calc-btn" data-check="distribution" type="button">Calculate</button>
+          <output id="out-distribution" class="output" aria-live="polite"></output>
+          <button id="next5" class="action next-step hidden" type="button">Next: final moments <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas6">
+      <div class="step-heading"><span>Step 6</span><h2>Read the final end moments</h2><p>Each final value is the algebraic sum of the entries in its member-end column.</p></div>
+      <div class="moment-review">
+        <div class="worked-sums">
+          <p id="sumAB" class="equation"></p>
+          <p id="sumBA" class="equation"></p>
+          <p id="sumBC" class="equation"></p>
+          <p id="sumCB" class="equation"></p>
+          <p class="note">With anticlockwise positive, the clockwise final moment at CB is negative. The source table lists its magnitude as 56.5 kN·m.</p>
+        </div>
+        <img class="small-figure" src="images/end-moments.png" alt="Worked-example beam end moment and reaction diagram">
+      </div>
+      <button id="next6" class="next-hand" type="button" aria-label="Continue to support reactions">☞</button>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas7">
+      <div class="step-heading"><span>Step 7</span><h2>Support reactions</h2><p>Use member equilibrium to calculate the reactions on each span and the total reaction at B.</p></div>
+      <div class="work-layout">
+        <div class="equation-panel">
+          <p class="equation">R<sub>A</sub> = (P b + M<sub>AB</sub> + M<sub>BA</sub>) / L<sub>AB</sub></p>
+          <p class="equation">R<sub>B1</sub> = P - R<sub>A</sub></p>
+          <p class="equation">R<sub>B2</sub> = (wL<sub>c</sub>²/2 + M<sub>BC</sub> + M<sub>CB</sub>) / L<sub>c</sub></p>
+          <p class="equation">R<sub>C</sub> = wL<sub>c</sub> - R<sub>B2</sub>; &nbsp; R<sub>B</sub> = R<sub>B1</sub> + R<sub>B2</sub></p>
+        </div>
+        <div class="work-panel">
+          <div class="field-grid two-col">
+            <label>R<sub>A</sub> <input id="reactionA" type="number" step="0.01"></label>
+            <label>R<sub>B1</sub> <input id="reactionB1" type="number" step="0.01"></label>
+            <label>R<sub>B2</sub> <input id="reactionB2" type="number" step="0.01"></label>
+            <label>R<sub>C</sub> <input id="reactionC" type="number" step="0.01"></label>
+            <label>R<sub>B</sub> total <input id="reactionB" type="number" step="0.01"></label>
+          </div>
+          <button class="action calc-btn" data-check="reactions" type="button">Calculate</button>
+          <output id="out-reactions" class="output" aria-live="polite"></output>
+        </div>
+      </div>
+      <button id="next7" class="next-hand hidden" type="button" aria-label="View completed shear-force diagram">☞</button>
+    </section>
+
+    <section class="simsubscreen hidden" id="canvas8">
+      <div class="completion">
+        <p class="eyebrow">ANALYSIS COMPLETE</p>
+        <h2>Shear-force diagram</h2>
+        <p>Reactions from moment distribution define the shear changes at A, the point load, joint B, and C.</p>
+        <img src="images/shear-force-diagram.png" alt="Shear-force diagram with reaction values for spans AB and BC">
+        <div id="reactionSummary" class="result-strip"></div>
+        <button id="restartBtn" class="primary" type="button">Restart experiment</button>
+      </div>
+    </section>
+  </main>
+  </div>
+  <script src="main.js"></script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
+

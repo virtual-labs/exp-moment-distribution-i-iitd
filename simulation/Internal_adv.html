@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Code Editor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse"style="font-size:20px;">
+        <div class="container-fluid">
+      
+          <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Inline<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html">Basic</a></li>
+                <li><a href="Inline_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Internal<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="Internal_basic.html">Basic</a></li>
+                <li><a href="Internal_adv.html">Advance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">External<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="External_basic.html">Basic</a></li>
+                <li><a href="External_adv.html">Advance</a></li>
+              </ul>
+            </li>
+       
+          </ul>
+        </div>
+      </nav>
+        
+
+      
+      <h1>INTERNAL</h1>
+      
+
+<center><div class="container" >
+    <div class="row">
+      <h3>Add Internal CSS using style attribute.</h3>
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 1 : 
+                <p> <b> Add Font Color and Style</b><br>
+                th: blue <br>
+             h2: red, underline <br>
+            table: font-family</p>
+          <button type="button" class="btn btn-success" onclick='document.getElementById("htmlCode").
+          innerHTML=` <!DOCTYPE html>
+        <head>
+        <style>
+        table {
+          color: #06425;
+          font-family: Arial,Helvetica;
+        }  
+        h2 {
+          color:red;
+          text-decoration:underline;
+        }
+        th:nth-child(n+2),td:nth-child(n+2){
+          text-align: center;
+        }
+        tr:hover{
+          opacity: 1.0;
+        }
+        th{
+          color: blue;
+        }
+        </style>
+        </head>
+        <body>
+        <h2>Internal Styling</h2>
+        <table>
+                    <tr>
+                      <th>Team Name</th>
+                      <th>Location</th>
+                      <th>League Type</th>
+                    </tr>
+                    <tr>
+                      <td>Afterburn - Air Force</td>
+                      <td>Colorado</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Cold Front (Bates College)</td>
+                      <td>Maine</td>
+                      <td>Women</td>
+                    </tr>
+                    <tr>
+                      <td>Disco Inferno (Brown University)</td>
+                      <td>Rhode Island</td>
+                      <td>Women</td>
+                    </tr>
+                    <tr>
+                      <td>Bad Habit (Catholic University)</td>
+                      <td>Washington DC</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Jive Turkeys (Dickinson College)</td>
+                      <td>Pennsylvania</td>
+                      <td>Both</td>
+                    </tr>
+                    <tr>
+                      <td>Knights of the Round Disc(Longwood College)</td>
+                      <td>Virginia</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Ninjas (University of Minnesota)</td>
+                      <td>Minnesota</td>
+                      <td>Women</td>
+                    </tr>
+                    <tr>
+                      <td>Flying Squirrels (Hendrix College)</td>
+                      <td>Arizona</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Superfly (Yale)</td>
+                      <td>Connecticut</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Flywheel (University of Michigan</td>
+                      <td>Michigan</td>
+                      <td>Women</td>
+                    </tr>
+                  </table>
+            </body>
+            </html>
+            
+        `'>
+        Add </button></div>
+
+            </div>
+
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 2 :
+                <p> <b>Add spacing</b><br>
+                   th,td,table: padding,margin <br>
+                   table: border,height <br></p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("htmlCode").
+              innerHTML=`  <!DOCTYPE html>
+            <head>
+            <style>
+              th,td{
+              margin:7px;
+              padding-bottom: 7px;
+              text-align: left;
+              padding: 10px 10px 5px 15px;
+            }
+            table{
+              box-sizing: border-box;
+              border: 1px solid #bbb;
+              color: #06425;
+              border: 6px solid white;
+              border-top: border-radius(50px 50px 0 0);
+              margin-left: 35px;
+              width: 83%;
+              padding: 3px;
+              height: auto;
+            }
+            h2 {
+              color:red;
+              text-decoration:underline;
+            }
+            th:nth-child(n+2),td:nth-child(n+2){
+              text-align: center;
+            }
+            tr:hover{
+              opacity: 1.0;
+            }
+            th{
+              color: blue;
+            }
+            </style>
+            </head>
+            <body>
+            <h2>Internal Styling</h2>
+            <table>
+                        <tr>
+                          <th>Team Name</th>
+                          <th>Location</th>
+                          <th>League Type</th>
+                        </tr>
+                        <tr>
+                          <td>Afterburn - Air Force</td>
+                          <td>Colorado</td>
+                          <td>Men</td>
+                        </tr>
+                        <tr>
+                          <td>Cold Front (Bates College)</td>
+                          <td>Maine</td>
+                          <td>Women</td>
+                        </tr>
+                        <tr>
+                          <td>Disco Inferno (Brown University)</td>
+                          <td>Rhode Island</td>
+                          <td>Women</td>
+                        </tr>
+                        <tr>
+                          <td>Bad Habit (Catholic University)</td>
+                          <td>Washington DC</td>
+                          <td>Men</td>
+                        </tr>
+                        <tr>
+                          <td>Jive Turkeys (Dickinson College)</td>
+                          <td>Pennsylvania</td>
+                          <td>Both</td>
+                        </tr>
+                        <tr>
+                          <td>Knights of the Round Disc(Longwood College)</td>
+                          <td>Virginia</td>
+                          <td>Men</td>
+                        </tr>
+                        <tr>
+                          <td>Ninjas (University of Minnesota)</td>
+                          <td>Minnesota</td>
+                          <td>Women</td>
+                        </tr>
+                        <tr>
+                          <td>Flying Squirrels (Hendrix College)</td>
+                          <td>Arizona</td>
+                          <td>Men</td>
+                        </tr>
+                        <tr>
+                          <td>Superfly (Yale)</td>
+                          <td>Connecticut</td>
+                          <td>Men</td>
+                        </tr>
+                        <tr>
+                          <td>Flywheel (University of Michigan</td>
+                          <td>Michigan</td>
+                          <td>Women</td>
+                        </tr>
+                      </table>
+                </body>
+                </html>`'>
+            Add spacing </button></div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="tbox">
+                Step 3 : 
+                <p> <b>Change background</b><br>
+                    tr(first-child): linear-gradient<br>
+                tr(nth-child): background: #D6EAF8   <br> </p>
+              <button type="button" class="btn btn-success" onclick='document.getElementById("htmlCode").
+              innerHTML=` <!DOCTYPE html>
+            <html>
+            <head>
+            <style>
+            
+                table{
+              box-sizing: border-box;
+              border: 1px solid #bbb;
+              color: #06425;
+              border: 6px solid white;
+              border-top: border-radius(50px 50px 0 0);
+              margin-left: 35px;
+              width: 83%;  
+              padding: 3px;
+              height: auto;
+            }
+            
+            tr:first-child {
+              background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+              padding-left: 25px;
+            
+            }
+            
+            th,td{
+              margin:7px;
+              padding-bottom: 7px;
+              text-align: left;
+              padding: 10px 10px 5px 15px;
+            }
+            th:nth-child(n+2),td:nth-child(n+2){
+              text-align: center;
+            }
+            tr:nth-child(n+2){
+              background: #D6EAF8;
+              padding: 5px 5px 5px 5px;
+              opacity: 0.6;
+            }
+            tr:hover{
+              opacity: 1.0;
+            }
+            th{
+              color: white;
+            }
+            h2 {
+              color:red;
+              text-decoration: underline;
+            }
+              </style>
+            </head>
+            <body>
+            <h2>Internal Styling</h2>
+                  <table>
+                    <tr><th>Team Name</th>
+                      <th>Location</th>
+                      <th>League Type</th></tr>
+                    <tr>
+                      <td>Afterburn - Air Force</td>
+                      <td>Colorado</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Cold Front (Bates College)</td>
+                      <td>Maine</td>
+                      <td>Women</td>
+                    </tr>
+                    <tr>
+                      <td>Disco Inferno (Brown University)</td>
+                      <td>Rhode Island</td>
+                      <td>Women</td>
+                    </tr>
+                    <tr>
+                      <td>Bad Habit (Catholic University)</td>
+                      <td>Washington DC</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Jive Turkeys (Dickinson College)</td>
+                      <td>Pennsylvania</td>
+                      <td>Both</td>
+                    </tr>
+                    <tr>
+                      <td>Knights of the Round Disc(Longwood College)</td>
+                      <td>Virginia</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Ninjas (University of Minnesota)</td>
+                      <td>Minnesota</td>
+                      <td>Women</td>
+                    </tr>
+                    <tr>
+                      <td>Flying Squirrels (Hendrix College)</td>
+                      <td>Arizona</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Superfly (Yale)</td>
+                      <td>Connecticut</td>
+                      <td>Men</td>
+                    </tr>
+                    <tr>
+                      <td>Flywheel (University of Michigan</td>
+                      <td>Michigan</td>
+                      <td>Women</td>
+                    </tr>
+                  </table> 
+            </body>
+            </html> `'>
+            Change background</button></div>
+
+        </div>
+    </div>
+    </div>
+    </center>
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="code">
+                        <textarea id="htmlCode" style="height: 96%">
+                      <!DOCTYPE html>
+                      <head>
+                      </head>
+                      <body>
+                      <h2>Internal styling</h2>
+                        <table>
+                          <tr>
+                            <th>Team Name</th>
+                            <th>Location</th>
+                            <th>League Type</th>
+                          </tr>
+                          <tr>
+                            <td>Afterburn - Air Force</td>
+                            <td>Colorado</td>
+                            <td>Men's</td>
+                          </tr>
+                          <tr>
+                            <td>Cold Front (Bates College)</td>
+                            <td>Maine</td>
+                            <td>Women's</td>
+                          </tr>
+                          <tr>
+                            <td>Disco Inferno (Brown University)</td>
+                            <td>Rhode Island</td>
+                            <td>Women's</td>
+                          </tr>
+                          <tr>
+                            <td>Bad Habit (Catholic University)</td>
+                            <td>Washington DC</td>
+                            <td>Men's</td>
+                          </tr>
+                          <tr>
+                            <td>Jive Turkeys (Dickinson College)</td>
+                            <td>Pennsylvania</td>
+                            <td>Both</td>
+                          </tr>
+                          <tr>
+                            <td>Knights of the Round Disc(Longwood College)</td>
+                            <td>Virginia</td>
+                            <td>Men's</td>
+                          </tr>
+                          <tr>
+                            <td>Ninjas (University of Minnesota)</td>
+                            <td>Minnesota</td>
+                            <td>Women's</td>
+                          </tr>
+                          <tr>
+                            <td>Flying Squirrels (Hendrix College)</td>
+                            <td>Arizona</td>
+                            <td>Men's</td>
+                          </tr>
+                          <tr>
+                            <td>Superfly (Yale)</td>
+                            <td>Connecticut</td>
+                            <td>Men's</td>
+                          </tr>
+                          <tr>
+                            <td>Flywheel (University of Michigan</td>
+                            <td>Michigan</td>
+                            <td>Women's</td>
+                          </tr>
+                        </table>    
+                      </body>
+                      </html>
+                          
+                      </textarea>  
+                      <button type="button" style="background: green; " class="btn btn-success" onclick="showPreview()">
+                      Try this out
+                      </button>    
+                      
+                      </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="preview">
+                        <iframe id="preview-window"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </center>
+    <center>
+        <div class="container">
+            <div class="row">
+                <h3> Try using Internal CSS yourself below. Add style attribute to different tags for designing a basic web page.</h3>
+
+                <div class="col-sm-6">
+                    <div class="code">
+	
+                        <textarea onkeyup="showPreview2()" id="htmlCode2" placeholder="Write Code here!!" style="height: 96%">
+                      </textarea>  
+                          
+                      
+                      </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="preview">
+                        <iframe id="preview-window2"></iframe>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    <br>
+    <br>
+    <script>
+      function showPreview(){
+      var htmlCode = document.getElementById("htmlCode").value;
+      var frame = document.getElementById("preview-window").contentWindow.document;
+      frame.open();
+      frame.write(htmlCode);
+      frame.close();
+    }
+    
+      function showPreview2(){
+      var htmlCode = document.getElementById("htmlCode2").value;
+      document.getElementById('preview-window2').srcdoc=htmlCode;
+    }
+    </script>
+    </body>
+    </html>
+      
+    
